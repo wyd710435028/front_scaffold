@@ -31,11 +31,11 @@
     <!-- 右侧页面内容 -->
     <el-container>
       <el-header style="background: #ffffff;height: 50px">
-        <el-row style="margin-top: 15px">
+        <el-row style="margin-top: 20px">
           <el-icon v-if="isCollapse"  @click="toggleCollapse" color="black"><Expand /></el-icon>
-          <el-icon v-if="!isCollapse"  @click="toggleCollapse" color="black"><Fold /></el-icon>
+          <el-icon v-else  @click="toggleCollapse" color="black"><Fold /></el-icon>
           <!-- 面包屑 -->
-          <Breadcrumb style="margin-top: 3px;margin-left: 10px"></Breadcrumb>
+          <Breadcrumb style="margin-top: 1px;margin-left: 10px"></Breadcrumb>
         </el-row>
       </el-header>
       <el-divider style="margin: 3px 0"></el-divider>
@@ -48,27 +48,12 @@
 </template>
 <script setup>
   // 图标
-  import {
-    Document,
-    Menu as IconMenu,
-    Location,
-    Setting,
-    Fold,
-    ArrowRight,
-    ArrowRightBold,
-    ArrowLeftBold,
-    DArrowRight,
-    DArrowLeft,
-    Expand,
-    HomeFilled,
-    List,
-    TrendCharts,
-  } from '@element-plus/icons-vue';
+  import {Fold, Expand, HomeFilled, List, TrendCharts} from '@element-plus/icons-vue';
+  //面包屑
   import Breadcrumb from "@/components/Breadcrumb.vue";
 </script>
 <script>
 import {ElBreadcrumb, ElBreadcrumbItem, ElHeader} from "element-plus";
-
 export default{
   components: {
     ElHeader,
@@ -78,8 +63,6 @@ export default{
   data(){
     return {
       isCollapse:false,
-      headerCol:21,
-      menuCol:3,
       foldOrExpend:'收起菜单'
     }
   },
@@ -88,17 +71,9 @@ export default{
     },
     handleClose(){
     },
+    //展开/收起菜单
     toggleCollapse(){
       this.isCollapse = !this.isCollapse;
-      if (this.isCollapse){
-        this.foldOrExpend = '展开菜单';
-        // this.menuCol = 3;
-        // this.headerCol = 21;
-      }else {
-        this.foldOrExpend = '收起菜单';
-        // this.menuCol = 1;
-        // this.headerCol = 23;
-      }
     }
   }
 }
