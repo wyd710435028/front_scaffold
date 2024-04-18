@@ -30,7 +30,18 @@
     </el-aside>
     <!-- 右侧页面内容 -->
     <el-container>
+      <!-- 头部 -->
       <el-header style="background: #ffffff;height: 50px">
+        <el-dropdown style="float: right;margin-top: 10px">
+          <el-avatar src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" class="avatar" shape="square"> admin </el-avatar>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item @click="toUserInformation()">个人信息</el-dropdown-item>
+              <el-dropdown-item @click="dialogVisible = true">切换用户</el-dropdown-item>
+              <el-dropdown-item @click="quit()">退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
         <el-row style="margin-top: 20px">
           <el-icon v-if="isCollapse"  @click="toggleCollapse" color="black"><Expand /></el-icon>
           <el-icon v-else  @click="toggleCollapse" color="black"><Fold /></el-icon>
@@ -38,7 +49,8 @@
           <Breadcrumb style="margin-top: 1px;margin-left: 10px"></Breadcrumb>
         </el-row>
       </el-header>
-      <el-divider style="margin: 3px 0"></el-divider>
+      <!-- 分割线 -->
+      <el-divider style="margin: 8px 0"></el-divider>
       <el-main>
         <router-view></router-view>
       </el-main>
