@@ -146,10 +146,6 @@ export default {
 .el-footer {
   line-height: 60px;
 }
-.avatar{
-  float:right;
-  margin-top: 10px;
-}
 .avatar:hover{
   background-color: #B3C0D1;
 //border: 1px solid #4682B4;
