@@ -23,6 +23,6 @@ const routers = computed(()=>{
 <style>
 /* 这里为了跟收起图标对其 */
 .bread{
-  margin-top:8px;
+  margin-top:10px;
 }
 </style>

@@ -77,10 +77,9 @@
   </el-container>
 </template>
 <script>
-import CommonHeader from "@/views/common/CommonHeader.vue";
 import {Search} from "@element-plus/icons-vue";
 export default {
-  components: {Search,CommonHeader},
+  components: {Search},
   data() {
     return {
       tableData: [
@@ -143,8 +142,6 @@ export default {
   color: #ffffff;
   text-align: left;
   line-height: 60px;
-  font-size: 20px;
-  font-family:"微软雅黑";
 }
 .el-footer {
   line-height: 60px;
